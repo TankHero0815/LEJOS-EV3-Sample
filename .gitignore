@@ -1,0 +1,13 @@
+
+bin
+src/UltraSchallSensor.java
+src/LichtSensor.java
+src/TastSensor.java
+src/Motor.java
+src/Helfer.java
+src/EV3Brick.java
+.DS_Store
+.classpath
+.project
+.settings/org.eclipse.jdt.core.prefs
+*.jar
