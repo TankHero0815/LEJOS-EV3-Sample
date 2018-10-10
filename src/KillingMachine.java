@@ -29,6 +29,8 @@ public class KillingMachine {
 			this.speed = 3;
 		} else if (speed < -3) {
 			this.speed = -3;
+		} else {
+			this.speed = speed;
 		}
 
 	}
@@ -44,4 +46,22 @@ public class KillingMachine {
 		leftEngine.stop();
 		rightEngine.stop();
 	}
+
+	public void turn(String direction, int angle) {
+
+		double turnDuration = angle / 180 / this.speed;
+		if (direction.equals("l")) {
+			leftEngine.start(-this.speed);
+			rightEngine.start(this.speed);
+		} else if (direction.equals("r")) {
+			rightEngine.start(-this.speed);
+			leftEngine.start(this.speed);
+		} else {
+			return;
+		}
+		Helfer.delayProgramm(turnDuration);
+		leftEngine.stop();
+		rightEngine.stop();
+	}
+
 }
