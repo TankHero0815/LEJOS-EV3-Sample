@@ -73,14 +73,11 @@ public class KillingMachine {
 	}
 
 	public void twoWheelCurve(double angle, double rad) {
-		// double x = (rad)/Helfer.SPURWEITE;
 		double x = (angle <= 0) ? -1 : 1;
 		double bow2 = x * angle / 360.0 * 2 * Math.PI * (rad + Helfer.SPURWEITE);
 		double bow1 = x * angle / 360.0 * 2 * Math.PI * rad;
 		double time2 = Helfer.getUmdrehungen(bow2);
 		double time1 = Helfer.getUmdrehungen(bow1);
-
-		// System.out.println(time);
 
 		if (x > 0) {
 			rightEngine.start(this.speed);
@@ -97,7 +94,6 @@ public class KillingMachine {
 
 	public void oneWheelTurn(double angle) {
 		double x = (this.speed <= 0) ? -1 : 1;
-		// double duration = x * angle / 90 / this.speed;
 		double duration = x * 2 * this.SPURWEITE * Math.PI / this.UMFANG / this.speed * (angle / 360);
 
 		if (duration >= 0) {
